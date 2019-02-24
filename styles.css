@@ -1,0 +1,279 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+/* Header */
+
+header {
+  background-color: #3E2A35;
+  color: #FFFFFF;
+  display: flex;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+header form {
+  background: #D2CCCD;
+}
+
+nav input {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 30px;
+  width: 200px;
+}
+
+.header-title h1 {
+  font-size: 2.5em;
+  letter-spacing: .5px;
+  padding-right: 16px;
+  margin-left: 2rem;
+}
+
+.header-title {
+  display: flex;
+  margin-right: 10%;
+}
+
+#search-bar {
+  color: #D2CCCD;
+  font-size: 1.3em;
+  padding: 5px 5px 5px 10px;
+}
+
+.searching {
+  display: flex;
+}
+
+.fa-search {
+  background-color: #C2B2B4;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  box-sizing: content-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 7px 7px 1px 7px;
+
+}
+
+/* Main */
+
+main{
+  align-items: center;
+  background-color: #3E2A35;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  min-width: 550px;
+  width: 33%;
+}
+
+label {
+  color: #FFFFFF;
+  font-weight: lighter;
+  margin-top: 1rem;
+}
+
+.input-header {
+  font-size: 1.35em;
+  margin-bottom: .5rem;
+}
+
+.form-title-input, 
+.form-caption-input {
+  min-height: 45px;
+}
+
+.filter-photo {
+  background-color: #5B4447;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 1.25em;
+  font-weight: 100;
+  margin: 1.5rem 6.5rem 1.5rem 0;
+  padding: .75rem 1rem;
+  width: 40%;
+}
+
+
+.add-photo {
+  background-color: #5B4447;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 1.25em;
+  font-weight: 100;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: .75rem 1rem;
+  width: 40%;
+}
+
+
+#choose-file {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.form-file-label {
+  background-color: #5B4447;
+  color: white;
+  font-size: 1.25em;
+  font-weight: 100;
+  margin: 1.5rem 0;
+  min-width: 550px;
+  padding: .75rem 0;
+  text-align: center;
+  width: 33%;
+}
+
+.form-file-label:hover, 
+.add-photo:hover,
+.filter-photo:hover {
+  background-color: #8D340A;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  background-color: #938284;
+  padding: 40px 0 0 20px;
+  height: 1000px;
+}
+
+.photo-card {
+  -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.5);
+  background-color: #FCFCFC;
+  box-shadow: -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  height: 325px;
+  padding: 10px 0 0 0;
+  text-align: center;
+  width: 225px;
+}
+
+h2 {
+  margin: 0;
+}
+
+@media screen and (max-width: 675px) {
+
+  header {
+    display: block;
+  }
+
+  nav input {
+     width: 520px;
+  }
+
+  .searching{
+    flex-direction: row;
+    margin: 0 auto;
+    width: 90%;
+    
+  }
+
+  .form-file-label{
+    min-width: 0;
+    width: 100%;
+  }
+
+  .header-title {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .header-title h1 {
+    font-size: 3rem;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  main form {
+    min-width: 0;
+    width: 90%;
+  }
+
+  .view-add-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .view-add-buttons button {
+    margin: 0, auto;
+    
+  }
+
+  .photo-card {
+    min-width: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .filter-photo {
+    width: 50%;
+  }
+
+  .add-photo {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  
+  .header {
+    flex-direction: inline-block;
+    display: block;
+    margin-bottom: 2em;
+  }
+
+  .header-title h1{
+    margin: .5em auto 0 auto;
+    font-size: 45px;
+  }
+
+  .searching {
+    margin-bottom: 1em;
+  }
+
+  main form {
+    min-width: 0;
+  }
+
+  .photo-card {
+    min-width: 0;
+    width: 90%;
+  }
+   .view-add-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0, auto;
+    padding: 0;
+  }
+
+  .filter-photo {
+    margin-right: 10px;
+  }
+
+}
+
+

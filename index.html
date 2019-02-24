@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet"  type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <title>Foto Finder</title>
+</head>
+<body>
+  <header>
+    <section class="header-title">
+      <h1>  FOTO <img src="images/Foto-Finder-logo.svg" height="40" width="40"> FINDER </h1>
+    </section>
+    <nav>
+      <section class="searching">
+        <input type="search" name="search" placeholder=" Search" id="search-bar">
+        <i class="fas fa-search"></i>
+      </section>  
+    </nav>
+  </header>
+  <main>
+    <form>
+      <label for="title-input" class="input-header form-title-label">Title</label>
+      <input type="text" name="photo-title" id="title-input" class="form-title-input">
+      <label for="caption-textarea" class="input-header form-caption-label">Caption</label>
+      <input type="text" name="photo-caption" id="caption-input" class="form-caption-input">
+      <label for="choose-file" class="input-header form-file-label">Choose File</label>
+      <input type="file" name="photo-file" id="choose-file" accept=".jpg, .png" class="btn form-file-input">
+        <section class="view-add-buttons">
+          <input type="submit" value="View 1 Favorites" class="btn filter-photo">
+          <input type="submit" value="Add to Album" class="btn add-photo">
+        </section>
+    </form>
+  </main>
+  <footer class="output-photo">
+  </footer>
+  <script type="text/javascript" src="photo.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
