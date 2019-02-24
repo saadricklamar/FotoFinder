@@ -161,10 +161,12 @@ label {
 
 /* Footer */
 
+
 footer {
   background-color: #938284;
-  padding: 40px 0 0 20px;
-  height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0 100px 20px;
 }
 
 .photo-card {
@@ -172,12 +174,33 @@ footer {
   background-color: #FCFCFC;
   box-shadow: -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.5);
-  flex-wrap: wrap;
   font-family: 'Roboto', sans-serif;
   height: 325px;
+  margin: 20px;
   padding: 10px 0 0 0;
   text-align: center;
   width: 225px;
+}
+
+figure {
+  width: 100%;
+  margin: 0 auto;
+}
+
+figure img{
+  height: 150px;
+}
+
+figcaption {
+  height: 100px;
+}
+
+.card-buttons {
+  background-color: #5B4447;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
 }
 
 h2 {
@@ -235,8 +258,7 @@ h2 {
 
   .photo-card {
     min-width: 0;
-    width: 90%;
-    margin: 0 auto;
+    margin: 5% auto;
   }
 
   .filter-photo {
@@ -272,7 +294,7 @@ h2 {
 
   .photo-card {
     min-width: 0;
-    width: 90%;
+    margin: 20px auto 20px 50px;
   }
    .view-add-buttons {
     display: flex;
