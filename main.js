@@ -53,7 +53,7 @@ function appendPhoto(photo) {
           ${photo.caption}
         </figcaption>
       </figure> 
-      <section>
+      <section class="card-buttons">
         <img src="images/delete.svg" class="delete-svg">
         <img src="images/favorite.svg" class="favorite-svg">
       </section>
