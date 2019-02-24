@@ -30,7 +30,7 @@ nav input {
 }
 
 .header-title h1 {
-  font-size: 2.5em;
+  font-size: 40px;
   letter-spacing: .5px;
   padding-right: 16px;
   margin-left: 2rem;
@@ -59,7 +59,15 @@ nav input {
   color: #FFFFFF;
   cursor: pointer;
   padding: 7px 7px 1px 7px;
+}
 
+.foto-finder-logo,
+.delete-svg,
+.favorite-svg {
+  height: 40px;
+  width: 50px;
+  /*vertical-align: text-top;*/
+  
 }
 
 /* Main */
@@ -138,6 +146,10 @@ label {
   padding: .75rem 0;
   text-align: center;
   width: 33%;
+}
+
+.form-file-label:after {
+ 
 }
 
 .form-file-label:hover, 
