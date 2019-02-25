@@ -11,28 +11,21 @@ var reader = new FileReader();
 var favoriteCounter = 0;
 
 // Event Listeners
-filterFavorite.addEventListener("click", showNumFavorites);
+// filterFavorite.addEventListener("click", showNumFavorites);
 searchBar.addEventListener("keyup", searchCards);
 createPhoto.addEventListener("click", loadPhoto);
 photoContainer.addEventListener("click", handleCardClickEvents);
 photoContainer.addEventListener("keyup", editCard);
 
-addToAlbum(photos);
+pageLoad(photos);
 
-function showNumFavorites(e){
-  e.preventDefault();
-
-  
-}
-
-function addToAlbum(parsedPhotos) {
+function pageLoad(parsedPhotos) {
   photos = [];
   parsedPhotos.forEach(function(photo) {
     var restoredPhoto = new Photo(photo.id, photo.title, photo.caption, photo.file, photo.favorite);
     photos.push(restoredPhoto);
     appendPhoto(restoredPhoto);
   });
-  emptyFooter();
 }
 
 function handleCardClickEvents(e){
@@ -40,7 +33,7 @@ function handleCardClickEvents(e){
     deletePhoto(e);
   } 
   if (e.target.classList.contains("favorite-svg")) {
-    favoritePhoto(e);
+    toggleFavoritePhoto(e);
   }
 }
 
@@ -83,7 +76,8 @@ function appendPhoto(photo) {
       </section>
     </article>`;
   photoContainer.insertAdjacentHTML("afterbegin", displayPhoto);
-  showFavoriteStatus(photo);
+  persistFavoriteStatus(photo);
+  displayNumOfFavoriteCards();
 }
 
 function editCard(e) {
@@ -107,7 +101,6 @@ function findPhoto(e) {
   });
 };
 
-
 function deletePhoto(e) {
   e.target.closest(".photo-card").remove();
   var photoToRemove = findPhoto(e);
@@ -115,7 +108,7 @@ function deletePhoto(e) {
 }
 
 
-function favoritePhoto(e) {
+function toggleFavoritePhoto(e) {
   var photoToFavorite = findPhoto(e);
   if(photoToFavorite.favorite === false) {
     photoToFavorite.favorite = true;
@@ -131,14 +124,13 @@ function favoritePhoto(e) {
   photoToFavorite.saveToStorage();
 }
 
-function showFavoriteStatus(photo) {
+function persistFavoriteStatus(photo) {
     if(photo.favorite === true) {
       var matchingCard = document.querySelector(`[data-index="${photo.id}"]`);
       var favIcon = matchingCard.querySelector(".favorite-svg");
       favIcon.classList.add("favorite-active-svg");
     }
 }
-
 
 function searchCards(e){
   var searchBarText = e.target.value;
@@ -161,13 +153,21 @@ function clearCards() {
 }
 
 
-function emptyFooter(){
-  var emptyDisplayMessage = document.querySelector(".add");
-  console.log(photoContainer.childNodes);
-  if (photoContainer.childNodes === "text") {
-    emptyDisplayMessage.style.display = "block";
-  } else {
-    emptyDisplayMessage.style.display = "none";
-  }
+function displayNumOfFavoriteCards() {
+  var favoriteButton = document.querySelector(".favorite-button");
+    if(favoriteButton.classList.contains("favorite-active-svg")) {
+    favoriteCounter++;
+    filterFavorite.value = "View " + favoriteCounter + " Favorites";
 }
+}
+
+// function emptyFooter(){
+//   var emptyDisplayMessage = document.querySelector(".add");
+//   console.log(photoContainer.childNodes);
+//   if (photoContainer.childNodes === "text") {
+//     emptyDisplayMessage.style.display = "block";
+//   } else {
+//     emptyDisplayMessage.style.display = "none";
+//   }
+// }
 
