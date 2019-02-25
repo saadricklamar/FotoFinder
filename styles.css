@@ -1,4 +1,4 @@
-html, body {
+ body {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
 }
@@ -61,27 +61,16 @@ nav input {
   padding: 7px 7px 1px 7px;
 }
 
-.foto-finder-logo,
-.delete-svg,
-.favorite-svg,
-.delete-active-svg,
-.favorite-active-svg {
-  height: 40px;
-  width: 50px;
-  background-repeat: no-repeat;
-}
-
 .foto-finder-logo {
+  height: 40px;
   vertical-align: top;
+  width: 50px;
 }
 
-.favorite-svg:hover {
-  
-}
 
 /* Main */
 
-main{
+main {
   align-items: center;
   background-color: #3E2A35;
   display: flex;
@@ -119,11 +108,10 @@ label {
   font-size: 1.25em;
   font-weight: 100;
   margin: 1.5rem 6.5rem 1.5rem 0;
+  outline: none;
   padding: .75rem 1rem;
   width: 40%;
-  outline: none;
 }
-
 
 .add-photo {
   background-color: #5B4447;
@@ -132,19 +120,15 @@ label {
   font-size: 1.25em;
   font-weight: 100;
   margin: 1.5rem 0 1.5rem 0;
+  outline: none;
   padding: .75rem 1rem;
   width: 40%;
-  outline: none;
 }
-
 
 #choose-file {
   height: 0.1px;
   opacity: 0;
   overflow: hidden;
-  position: absolute;
-  width: 0.1px;
-  z-index: -1;
 }
 
 .form-file-label {
@@ -157,10 +141,6 @@ label {
   padding: .75rem 0;
   text-align: center;
   width: 33%;
-}
-
-.form-file-label:after {
- 
 }
 
 .form-file-label:hover, 
@@ -177,27 +157,26 @@ footer {
   background-color: #938284;
   display: flex;
   flex-wrap: wrap;
-  padding: 40px 0 100px 20px;
   height: 100%;
+  padding: 40px 0 100px 20px;
 }
-
 
 .photo-card {
   background-color: #FCFCFC;
+  border: 1px solid #3E2A35;
   font-family: 'Roboto', sans-serif;
   height: 325px;
   margin: 2% 2%;
   padding: 10px 0 0 0;
   text-align: left;
   width: 225px;
-  border: 1px solid #3E2A35;
 }
 
 h2 {
-  margin-top: 0;
-  padding-bottom: 10px;
-  font-size: 1em;
   color: #3E2A35;
+  font-size: 1em;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
 figure {
@@ -205,29 +184,25 @@ figure {
   margin: 0 auto;
 }
 
-figure img{
+figure img {
   height: 150px;
 }
 
 figcaption {
+  color: #3E2A35;
+  font-size: 1em;
+  font-weight: bold;
   height: 90px;
   outline: none;
-  font-size: 1em;
   padding-bottom:0;
-  color: #3E2A35;
-  font-weight: bold;
 }
 
 .card-buttons {
   background-color: #5B4447;
   display: flex;
+  height: 39px;
   justify-content: space-between;
   padding: 7px;
-  height: 39px;
-}
-
-h2 {
-  margin: 0;
 }
 
 button {
@@ -237,14 +212,21 @@ button {
 }
 
 button:focus {
- outline: none;
+  outline: none;
+}
 
+.delete-svg,
+.favorite-svg,
+.delete-active-svg,
+.favorite-active-svg {
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 50px;
 }
 
 .delete-svg:hover,
 .favorite-svg:hover {
   cursor: pointer;
-
 }
 
 .favorite-svg {
@@ -253,7 +235,6 @@ button:focus {
 
 .favorite-active-svg {
   background-image: url("images/favorite-active.svg");
-  
 }
 
 .add {
@@ -262,7 +243,7 @@ button:focus {
 
 
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 700px) {
 
   header {
     display: block;
@@ -291,7 +272,7 @@ button:focus {
   }
 
   .header-title h1 {
-    font-size: 3rem;
+    font-size: 55px;
     margin: 0 auto;
     padding: 10px;
   }
@@ -308,35 +289,36 @@ button:focus {
 
   .view-add-buttons button {
     margin: 0, auto;
-    
   }
 
   .photo-card {
-    min-width: 0;
     margin: 5% 2%;
+    min-width: 0;
   }
 
-  .filter-photo {
-    width: 50%;
-  }
-
+  .filter-photo,
   .add-photo {
     width: 50%;
   }
 
+  .foto-finder-logo {
+    height: 65px;
+    vertical-align: top;
+    width: 65px;
+  }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 540px) {
   
   .header {
-    flex-direction: inline-block;
     display: block;
+    flex-direction: inline-block;
     margin-bottom: 2em;
   }
 
   .header-title h1{
+    font-size: 40px;
     margin: .5em auto 0 auto;
-    font-size: 45px;
   }
 
   .searching {
@@ -348,8 +330,8 @@ button:focus {
   }
 
   .photo-card {
-    min-width: 0;
     margin: 20px 5% 20px 18%;
+    min-width: 0;
   }
    .view-add-buttons {
     display: flex;
@@ -361,6 +343,12 @@ button:focus {
 
   .filter-photo {
     margin-right: 10px;
+  }
+
+  .foto-finder-logo {
+    height: 45px;
+    vertical-align: top;
+    width: 45px;
   }
 
 }
