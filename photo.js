@@ -10,6 +10,7 @@ class Photo {
   saveToStorage() {
     var stringifiedPhotos = JSON.stringify(photos);
     localStorage.setItem("photos", stringifiedPhotos);
+    
   }
 
   deleteFromStorage() {
