@@ -6,7 +6,6 @@ const card = document.querySelector(".photo-card");
 var searchBar = document.querySelector("#search-bar");
 var filterFavorite = document.querySelector(".filter-photo");
 var photoContainer = document.querySelector(".output-photo");
-
 var photos = JSON.parse(localStorage.getItem("photos")) || [];
 var reader = new FileReader();
 var favoriteCounter = 0;
@@ -51,7 +50,7 @@ function loadPhoto(e) {
 function makePhoto(e) {
   e.preventDefault();
   var title = document.querySelector("#title-input");
-  var caption = document.querySelector("#caption-input");
+  var caption = document.querySelector("#caption-textarea");
   if(title.value === "" || caption.value === "") {
     alert("Please enter a title and caption for your photo.")
   } else {
@@ -81,6 +80,7 @@ function appendPhoto(photo) {
   photoContainer.insertAdjacentHTML("afterbegin", displayPhoto);
   persistFavoriteStatus(photo);
   displayNumOfFavoriteCards();
+  emptyFooterMessage();
 }
 
 function editCard(e) {
@@ -108,6 +108,9 @@ function deletePhoto(e) {
   e.target.closest(".photo-card").remove();
   var photoToRemove = findPhoto(e);
   photoToRemove.deleteFromStorage();
+  if (photoContainer.childNodes.length <= 3){
+    displayFooterMessage();
+  }
 }
 
 
@@ -197,13 +200,13 @@ function displayAll() {
 }
 
 
-// function emptyFooter(){
-//   var emptyDisplayMessage = document.querySelector(".add");
-//   console.log(photoContainer.childNodes);
-//   if (photoContainer.childNodes === "text") {
-//     emptyDisplayMessage.style.display = "block";
-//   } else {
-//     emptyDisplayMessage.style.display = "none";
-//   }
-// }
+function emptyFooterMessage() {
+  var displayMessage = document.querySelector(".add");
+  displayMessage.classList.add("remove");
+}
+
+function displayFooterMessage() {
+  var displayMessage = document.querySelector(".add");
+  displayMessage.classList.remove("remove");
+}
 

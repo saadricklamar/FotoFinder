@@ -1,6 +1,7 @@
- body {
+body {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
+  background-color: #938284
 }
 
 /* Header */
@@ -29,11 +30,15 @@ nav input {
   width: 200px;
 }
 
+::placeholder {
+  color: gray;
+}
+
 .header-title h1 {
   font-size: 40px;
   letter-spacing: .5px;
-  padding-right: 16px;
   margin-left: 2rem;
+  padding-right: 16px;
 }
 
 .header-title {
@@ -47,7 +52,7 @@ nav input {
   padding: 5px 5px 5px 10px;
 }
 
-.searching {
+.search-area {
   display: flex;
 }
 
@@ -97,7 +102,7 @@ label {
 }
 
 .form-title-input, 
-.form-caption-input {
+.form-caption-textarea {
   min-height: 45px;
 }
 
@@ -238,6 +243,10 @@ button:focus {
 }
 
 .add {
+  margin-left: 40%;
+}
+
+.remove {
   display: none;
 }
 
@@ -253,7 +262,7 @@ button:focus {
      width: 520px;
   }
 
-  .searching{
+  .search-area {
     flex-direction: row;
     margin: 0 auto;
     width: 90%;
@@ -321,7 +330,7 @@ button:focus {
     margin: .5em auto 0 auto;
   }
 
-  .searching {
+  .search-area {
     margin-bottom: 1em;
   }
 
