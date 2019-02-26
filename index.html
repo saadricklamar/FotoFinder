@@ -4,15 +4,16 @@
   <link rel="stylesheet" type="text/css" href="normalize.css">
   <link rel="stylesheet"  type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Foto Finder</title>
 </head>
 <body>
   <header>
     <section class="header-title">
-      <h1>  FOTO <img src="images/Foto-Finder-logo.svg" height="40" width="40" class="foto-finder-logo"> FINDER </h1>
+      <h1>  FOTO <img src="images/Foto-Finder-logo.svg" height="40" width="40" class="foto-finder-logo" alt="Foto Finder logo. A drawing of a blood orange camera"> FINDER </h1>
     </section>
     <nav>
-      <section class="searching">
+      <section class="search-area">
         <input type="search" name="search" placeholder=" Search" id="search-bar">
         <i class="fas fa-search"></i>
       </section>  
@@ -21,19 +22,19 @@
   <main>
     <form>
       <label for="title-input" class="input-header form-title-label">Title</label>
-      <input type="text" name="photo-title" id="title-input" class="form-title-input">
+      <input type="text" id="title-input" class="form-title-input">
       <label for="caption-textarea" class="input-header form-caption-label">Caption</label>
-      <input type="text" name="photo-caption" id="caption-input" class="form-caption-input">
+      <input type="text" id="caption-textarea" class="form-caption-textarea">
       <label for="choose-file" class="input-header form-file-label">Choose File</label>
-      <input type="file" name="photo-file" id="choose-file" accept="image/*" class="btn form-file-input">
+      <input type="file" id="choose-file" accept="image/*" class="form-file-input">
         <section class="view-add-buttons">
-          <input type="submit" value="View Favorites" class="btn filter-photo">
-          <input type="submit" value="Add to Album" class="btn add-photo">
+          <input type="submit" value="View Favorites" class="filter-photo">
+          <input type="submit" value="Add to Album" class="add-photo">
         </section>
     </form>
   </main>
   <footer class="output-photo">
-    <h1 class="add">Add a Photo</h1>
+    <h1 class="add">Add a photo...</h1>
   </footer>
   <script type="text/javascript" src="photo.js"></script>
   <script type="text/javascript" src="main.js"></script>
