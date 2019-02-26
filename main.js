@@ -12,7 +12,7 @@ var reader = new FileReader();
 var favoriteCounter = 0;
 
 // Event Listeners
-filterFavorite.addEventListener("click", showNumFavorites);
+filterFavorite.addEventListener("click", toggleFavoriteButton);
 searchBar.addEventListener("keyup", searchCards);
 createPhoto.addEventListener("click", loadPhoto);
 photoContainer.addEventListener("click", handleCardClickEvents);
@@ -164,24 +164,38 @@ function displayNumOfFavoriteCards() {
   }
 }
 
-function showNumFavorites(e) {
+
+function toggleFavoriteButton(e){
   e.preventDefault();
+  if(filterFavorite.value !== "Show All Fotos") {
+    displayFavorites();
+  } else if (filterFavorite.value === "Show All Fotos") {
+    displayAll();
+  }
+}
+
+function displayFavorites() {
   var favoritedPhotos = [];
   clearCards();
   for (var i = 0; i < photos.length; i++) {
     if(photos[i].favorite === true) {
       favoritedPhotos.push(photos[i]);
       appendPhoto(photos[i]); 
-    } 
-  }
+    }
+  } 
   filterFavorite.value = "Show All Fotos";
 }
-  
 
- // if(e.target.closest(".photo-card").classList.contains("favorite-active-svg")) {
- //    favoriteCounter--;
- //    filterFavorite.value = "View " + favoriteCounter + " Favorites";
- //  }
+function displayAll() {
+  var allPhotos = [];
+  clearCards();
+  for (var i = 0; i < photos.length; i++) {
+        allPhotos.push(photos[i]);
+        appendPhoto(photos[i]); 
+  } 
+  filterFavorite.value = "View " + favoriteCounter + " Favorites";
+}
+
 
 // function emptyFooter(){
 //   var emptyDisplayMessage = document.querySelector(".add");
