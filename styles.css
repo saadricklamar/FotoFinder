@@ -161,7 +161,8 @@ main form {
 /* Footer */
 
 .add {
-  margin-left: 40%;
+  margin-top: 15%;
+  margin-left: 37%;
   color: #FFFFFF;
   width: 100%;
 }
@@ -280,7 +281,7 @@ h2 {
   }
 
   footer{
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   header {
@@ -314,7 +315,7 @@ h2 {
   }
 
   .photo-card {
-    margin: 5% 2%;
+    margin: 5% 50px;
     min-width: 0;
   }
 

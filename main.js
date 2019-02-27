@@ -1,13 +1,14 @@
 
 var chooseFile = document.querySelector("#choose-file");
 var createPhoto = document.querySelector(".add-photo");
-const card = document.querySelector(".photo-card");
+var card = document.querySelector(".photo-card");
 var searchBar = document.querySelector("#search-bar");
 var filterFavorite = document.querySelector(".filter-photo");
 var photoContainer = document.querySelector(".output-photo");
 var photos = JSON.parse(localStorage.getItem("photos")) || [];
 var reader = new FileReader();
 var favoriteCounter = 0;
+var photoCounter = 0;
 
 
 filterFavorite.addEventListener("click", toggleFavoriteButton);
@@ -28,10 +29,10 @@ function pageLoad(parsedPhotos) {
   });
 }
 
-function handleCardClickEvents(e, photo) {
+function handleCardClickEvents(e) {
   if(e.target.id === "delete") {
     deletePhoto(e);
-  } 
+  }
   if (e.target.classList.contains("favorite-svg")) {
     toggleFavoritePhoto(e);
   }
@@ -204,4 +205,5 @@ function displayFooterMessage() {
   var displayMessage = document.querySelector(".add");
   displayMessage.classList.remove("remove");
 }
+
 
