@@ -14,7 +14,7 @@ filterFavorite.addEventListener("click", toggleFavoriteButton);
 searchBar.addEventListener("keyup", searchCards);
 createPhoto.addEventListener("click", loadPhoto);
 photoContainer.addEventListener("click", handleCardClickEvents);
-photoContainer.addEventListener("keyup", editCard);
+photoContainer.addEventListener("focusout", editCard);
 
 pageLoad(photos);
 
@@ -24,14 +24,13 @@ function pageLoad(parsedPhotos) {
     var restoredPhoto = new Photo(photo.id, photo.title, photo.caption, photo.file, photo.favorite);
     photos.push(restoredPhoto);
     appendPhoto(restoredPhoto);
+    reflectFavoriteCardsNumber();
   });
 }
 
-function handleCardClickEvents(e){
+function handleCardClickEvents(e, photo) {
   if(e.target.id === "delete") {
     deletePhoto(e);
-    favoriteCounter--;
-    filterFavorite.value = "View " + favoriteCounter + " Favorites";
   } 
   if (e.target.classList.contains("favorite-svg")) {
     toggleFavoritePhoto(e);
@@ -72,13 +71,12 @@ function appendPhoto(photo) {
         </figcaption>
       </figure> 
       <section class="card-buttons">
-        <button><img src="images/delete.svg" class="delete-svg" id="delete"></button>
-        <button class="favorite-button favorite-svg"></button>
+        <button><img src="images/delete.svg" class="delete-svg" id="delete" alt="gray trash icon used to delete photo card"></button>
+        <button class="favorite-button favorite-svg" alt="gray heart icon that changes red when clicked and functions to favorite a photo"></button>
       </section>
     </article>`;
   photoContainer.insertAdjacentHTML("afterbegin", displayPhoto);
   persistFavoriteStatus(photo);
-  displayNumOfFavoriteCards();
   emptyFooterMessage();
 }
 
@@ -109,6 +107,8 @@ function deletePhoto(e) {
   photoToRemove.deleteFromStorage();
   if (photoContainer.childNodes.length <= 3){
     displayFooterMessage();
+    favoriteCounter = 0;
+    filterFavorite.value = "View Favorites";
   }
 }
 
@@ -131,7 +131,6 @@ function toggleFavoritePhoto(e) {
 function persistFavoriteStatus(photo) {
     if(photo.favorite === true) {
       var matchingCard = document.querySelector(`[data-index="${photo.id}"]`);
-      console.log(matchingCard);
       var favIcon = matchingCard.querySelector(".favorite-svg");
       favIcon.classList.add("favorite-active-svg");
     }
@@ -157,7 +156,7 @@ function clearCards() {
   });
 }
 
-function displayNumOfFavoriteCards() {
+function reflectFavoriteCardsNumber() {
     var favoriteButton = document.querySelector(".favorite-button");
     if(favoriteButton.classList.contains("favorite-active-svg")) {
     favoriteCounter++;
