@@ -135,6 +135,7 @@ nav input {
 .input-header {
   font-size: 1.35em;
   margin-bottom: .5rem;
+  width: 100%;
 }
 
 label {
@@ -256,6 +257,11 @@ h2 {
   display: none;
 }
 
+.view-add-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 750px) {
 
   .add {
@@ -281,7 +287,7 @@ h2 {
   }
 
   footer{
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   header {
@@ -315,7 +321,7 @@ h2 {
   }
 
   .photo-card {
-    margin: 5% 50px;
+    margin: 5% 5px;
     min-width: 0;
   }
 
