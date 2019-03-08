@@ -4,8 +4,6 @@ FotoFinder is an interactice UI that allows users to upload and keep track of im
 and caption for their photo and upon adding the photo to their album the photo appears and persists. Users can edit the
 title and caption as well as favorite their photos. Users can display their favorite photos only and photos can be deleted as well. 
 
-* Foto Finder --> file:///Users/saadbaradan/FotoFinder/index.html
-
 # Features
 * Add and Delete Photos
 * Favorite Photos
