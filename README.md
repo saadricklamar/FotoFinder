@@ -14,7 +14,11 @@ title and caption as well as favorite their photos. Users can display their favo
 * Search Photos by Title and Caption
 
 # Desktop View
+## Blank
 ![desktopfotofinder](https://user-images.githubusercontent.com/42000931/53457044-f8759a80-39ed-11e9-8d43-7644806a0c56.png)
+
+## With Foto Cards
+![fotofinderwithcards](https://user-images.githubusercontent.com/42000931/53998917-c7d4e580-40fe-11e9-9db6-78cdcbd8a994.png)
 
 # Tablet View
 ![tabletfotofinder](https://user-images.githubusercontent.com/42000931/53457048-fe6b7b80-39ed-11e9-8309-68cb57f0eb76.png)
