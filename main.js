@@ -8,8 +8,6 @@ var photoContainer = document.querySelector(".output-photo");
 var photos = JSON.parse(localStorage.getItem("photos")) || [];
 var reader = new FileReader();
 var favoriteCounter = 0;
-var photoCounter = 0;
-
 
 filterFavorite.addEventListener("click", toggleFavoriteButton);
 searchBar.addEventListener("keyup", searchCards);
@@ -150,12 +148,12 @@ function searchCards(e){
   }
 };
 
-function clearCards() {
-  var photosToDelete = photoContainer.querySelectorAll('.photo-card');
+ var clearCards = () => {
+   var photosToDelete = photoContainer.querySelectorAll('.photo-card');
   photosToDelete.forEach(function(photo) {
     photo.remove();
   });
-}
+ }
 
 function reflectFavoriteCardsNumber() {
     var favoriteButton = document.querySelector(".favorite-button");
@@ -164,6 +162,7 @@ function reflectFavoriteCardsNumber() {
     filterFavorite.value = "View " + favoriteCounter + " Favorites";
   }
 }
+
 
 function toggleFavoriteButton(e){
   e.preventDefault();

@@ -12,7 +12,7 @@ class Photo {
     localStorage.setItem("photos", stringifiedPhotos);
   }
 
-  deleteFromStorage() {
+ deleteFromStorage() {
     var i = photos.indexOf(this); 
     photos.splice(i, 1);
     var stringifiedPhotos = JSON.stringify(photos);
