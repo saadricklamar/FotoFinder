@@ -1,6 +1,6 @@
 # Overview 
 
-*FotoFinder* is a web based application built with Vanilla JS that allows users to upload and keep track of images. Users are prompted to select an image, insert a title 
+*FotoFinder* is a web based application built with *Vanilla* JS that allows users to upload and keep track of images. Users are prompted to select an image, insert a title 
 and caption for their photo, and add the photo to their album. Users can edit the
 title and caption as well as favorite their photos. Users can display their favorite photos only and photos can be deleted as well. 
 
